@@ -20,30 +20,46 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="于浩强的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安诺">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="说明本文章总结了flutter开发中常用的一些小技巧，目前的内容为awesomefluttertips的译文（在每个小点上可能也会添加一些我自己的理解），后续会添加我自己理解的一些flutter小技巧，持续更新。 #1 stless 和 stful我们可以输入“ stless”和“ stful”，然后编辑器会自动分别生成无状态Flutter Widget或有状态Flutter Widget。  #">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter小技巧(译)">
+<meta property="og:url" content="http://yoursite.com/2020/07/15/flutter%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="安诺">
-<meta property="og:description" content="于浩强的博客">
+<meta property="og:description" content="说明本文章总结了flutter开发中常用的一些小技巧，目前的内容为awesomefluttertips的译文（在每个小点上可能也会添加一些我自己的理解），后续会添加我自己理解的一些flutter小技巧，持续更新。 #1 stless 和 stful我们可以输入“ stless”和“ stful”，然后编辑器会自动分别生成无状态Flutter Widget或有状态Flutter Widget。  #">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/01stlesstful.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/02ifnull.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/03functions.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/04cascadebefore.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/04cascadeafter.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/05dataclass.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/06richtext.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/07spacer.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/08separatedlist.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/09functionargument.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/10import.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/11texttheme.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/14fractionallysizedbox.gif">
+<meta property="article:published_time" content="2020-07-15T06:08:17.000Z">
+<meta property="article:modified_time" content="2020-07-15T10:19:31.484Z">
 <meta property="article:author" content="Haoqiang Yu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/01stlesstful.gif">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/07/15/flutter%E5%B0%8F%E6%8A%80%E5%B7%A7/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>安诺</title>
+  <title>flutter小技巧(译) | 安诺</title>
   
 
 
@@ -141,9 +157,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -159,10 +176,9 @@
       <meta itemprop="name" content="安诺">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/15/flutter%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">flutter小技巧(译)</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          flutter小技巧(译)
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -186,7 +202,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本文章总结了flutter开发中常用的一些小技巧，目前的内容为<a href="https://github.com/erluxman/awesomefluttertips" target="_blank" rel="noopener">awesomefluttertips</a>的译文（在每个小点上可能也会添加一些我自己的理解），后续会添加我自己理解的一些flutter小技巧，持续更新。</p>
+        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本文章总结了flutter开发中常用的一些小技巧，目前的内容为<a href="https://github.com/erluxman/awesomefluttertips" target="_blank" rel="noopener">awesomefluttertips</a>的译文（在每个小点上可能也会添加一些我自己的理解），后续会添加我自己理解的一些flutter小技巧，持续更新。</p>
 <h2 id="1-stless-和-stful"><a href="#1-stless-和-stful" class="headerlink" title="#1 stless 和 stful"></a>#1 <code>stless</code> 和 <code>stful</code></h2><p>我们可以输入“ stless”和“ stful”，然后编辑器会自动分别生成无状态Flutter Widget或有状态Flutter Widget。</p>
 <p><img src="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/01stlesstful.gif" alt="statful"></p>
 <h2 id="2-If-Null-操作符"><a href="#2-If-Null-操作符" class="headerlink" title="#2 If Null 操作符 (??)"></a>#2 <code>If Null</code> 操作符 (<code>??</code>)</h2><p><code>??</code> 检查是否为 <code>null</code>。 如果不为<code>null</code>，则返回其自身的值；如果为<code>null</code>，则返回在<code>??</code>之后的值。</p>
@@ -295,21 +311,23 @@ printUser() =&gt; print(fullName + &quot; is a ${isAdult ? &quot;Adult&quot; : &
         )</code></pre><p><a href="https://codepen.io/erluxman/pen/rNOLOzG" target="_blank" rel="noopener">在codepen上试试</a></p>
 <p><img src="https://raw.githubusercontent.com/erluxman/awesomefluttertips/master/assets/14fractionallysizedbox.gif" alt="fractionally"></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -362,6 +380,7 @@ printUser() =&gt; print(fullName + &quot; is a ${isAdult ? &quot;Adult&quot; : &
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-stless-和-stful"><span class="nav-number">2.</span> <span class="nav-text">#1 stless 和 stful</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-If-Null-操作符"><span class="nav-number">3.</span> <span class="nav-text">#2 If Null 操作符 (??)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-内置函数"><span class="nav-number">4.</span> <span class="nav-text">#3 内置函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-级联链接符号-Fluent-API"><span class="nav-number">5.</span> <span class="nav-text">#4 ..级联链接符号 Fluent API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Dart-编辑器插件-data-class"><span class="nav-number">6.</span> <span class="nav-text">#5 Dart 编辑器插件 data class</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#🚨❗️注意❗️🚨-光标应在要生成的数据类内"><span class="nav-number">6.1.</span> <span class="nav-text">🚨❗️注意❗️🚨 : 光标应在要生成的数据类内.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-RichText-Widget-富文本"><span class="nav-number">7.</span> <span class="nav-text">#6 RichText Widget 富文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Spacer控件"><span class="nav-number">8.</span> <span class="nav-text">#7 Spacer控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-ListView-separated-分割-ListView"><span class="nav-number">9.</span> <span class="nav-text">#8 ListView.separated() 分割 ListView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-像一个参数使用函数"><span class="nav-number">10.</span> <span class="nav-text">#9 像一个参数使用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-相对导入：导入我们在lib包中的-dart文件的正确方法"><span class="nav-number">11.</span> <span class="nav-text">#10 相对导入：导入我们在lib包中的.dart文件的正确方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-复用-Text-Style"><span class="nav-number">12.</span> <span class="nav-text">#11 复用 Text Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-集合初始化"><span class="nav-number">13.</span> <span class="nav-text">#12 集合初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day13-箭头使用-gt"><span class="nav-number">14.</span> <span class="nav-text">#Day13 箭头使用 &#x3D;&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-FractionallySizedBox"><span class="nav-number">15.</span> <span class="nav-text">#14 FractionallySizedBox()</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
